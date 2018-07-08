@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verify Certificate</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css"/>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link rel="shortcut icon" type="image/png" href="images/certificate.ico"/>
+  <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+  <script src="js/search.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+   <div class="page-header">
+     <h1>Verify Certificate</h1>
+   </div>
+   <form>
+     <div class="alert alert-success" style="display: none">Certificate is found in the system. Click <a data-toggle="modal" data-target="#certModal" style="cursor: pointer">here</a> to view the certificate.</div>
+     <div class="form-group">
+	   <input type="text" class="form-control" id="student" placeholder="Student address" required="required"/>
+     </div>
+     <div class="form-group">
+       <input type="text" class="form-control" id="issuer" placeholder="Issuer address" required="required"/>
+     </div>
+     <div class="form-group">
+       <input type="text" class="form-control" id="title" placeholder="Certificate title" required="required"/>
+     </div>
+	 <div class="alert alert-warning" style="display: none">Certificate is not found in the system.</div>
+     <input type="submit" class="btn btn-primary" value="Search Certificate"/>
+	 <a href="index.html" class="btn">Back</a>
+   </form>
+   <div class="modal fade" id="certModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="text-align: center">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Certificate of Completion</h3>
+        </div>
+        <div class="modal-body" style="text-align: center; background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/cert-template.gif)">
+          <p style="margin-top: 80px; margin-bottom: 80px;">This is to certify that<br/>
+		  <strong><span id="student-name"></span></strong><br/>
+		  has successfully completed the course<br/>
+		  <strong><span id="course-title"></span></strong><br/>
+		  offered by <strong><span id="issuer-name"></span></strong><br/>
+		  on <strong><span id="completion-date"></span></strong>.<br/><br/>
+		  <i>Powered by Blockchain Certificate Apps</i>
+		  </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Certificates</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css"/>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/student-certificates.js"></script>
+  <link rel="shortcut icon" type="image/png" href="images/certificate.ico"/>
+</head>
+<body class="container">
+   <div class="page-header">
+     <h1>My Certificates</h1>
+   </div>
+   <div class="table-responsive">
+    <table class="table table-bordered" style="display: none">
+      <thead>
+        <tr>
+          <th>Issuer</th>
+          <th>Course Title</th>
+          <th>Completion Date</th>
+		  <th>Expiry Date</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+  <a href="index.html" class="btn">Back</a>
+  <div class="modal fade" id="certModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="text-align: center">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Certificate of Completion</h3>
+        </div>
+        <div class="modal-body" style="text-align: center; background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/cert-template.gif)">
+          <p style="margin-top: 80px; margin-bottom: 80px;">This is to certify that<br/>
+		  <strong><span id="student-name"></span></strong><br/>
+		  has successfully completed the course<br/>
+		  <strong><span id="course-title"></span></strong><br/>
+		  offered by <strong><span id="issuer-name"></span></strong><br/>
+		  on <strong><span id="completion-date"></span></strong>.<br/><br/>
+		  <i>Powered by Blockchain Certificate Apps</i>
+		  </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

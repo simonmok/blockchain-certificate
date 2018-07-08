@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Certificate</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'/>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'/>
+  <link rel="shortcut icon" type="image/png" href="images/certificate.ico"/>
+</head>
+<body class="container">
+   <div class="page-header">
+     <h1>Create Certificate</h1>
+   </div>
+   <form>
+     <div class="alert alert-success" role="alert" style="display: none">
+		Certificate record created.
+	 </div>
+     <div class="form-group">
+	   <input type="text" class="form-control" id="course-title" placeholder="Course or programme title" required="required"/>
+     </div>
+	 <div class="form-group">
+	   <input type="text" class="form-control" id="address" placeholder="Student account address" required="required" pattern=".{42}" title="Address should have 42 characters"/>
+     </div>
+     <div class="form-group">
+       <input type="text" class="form-control" id="completion-date" onfocus="this.type='date'" onblur="this.type='text'" placeholder="Completion date" required="required"/>
+     </div>
+     <div class="form-group">
+       <input type="text" class="form-control" id="expiry-date" onfocus="this.type='date'" onblur="this.type='text'" placeholder="Expiry date" />
+     </div>
+	 <div class="alert alert-danger" role="alert" style="display: none">
+     </div>
+     <input type="submit" class="btn btn-primary" value="Create Certificate"/>
+	 <a href="issuer-certificates.html" class="btn">Back</a>
+   </form>
+</body>
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="js/certificate.js"></script>
+</html>
