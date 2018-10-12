@@ -28,17 +28,17 @@ contract Master {
 
 	Certificate[] private certificates;
 
-    address private adminOwner;
+    address private owner;
     
     constructor() public {
-        adminOwner = msg.sender;
+        owner = msg.sender;
     }
 
-    // create new student (admin)
+    // create new student
     function createStudent(address _address, string _name) public {
         
-        // Check current user is admin 
-        require(adminOwner == msg.sender);
+        // Check current user is owner
+        require(owner == msg.sender);
 
 		// Check if account already exists
 		validateAddress(_address);
@@ -96,11 +96,11 @@ contract Master {
         revert();
     }
 
-    // create new issuer (admin)
+    // create new issuer
     function createIssuer(address _address, string _name, string _issuerAddress, string _logoUrl) public {
         
-        // Check current user is admin 
-        require(adminOwner == msg.sender);
+        // Check current user is owner 
+        require(owner == msg.sender);
 
 		// Check if account already exists
 		validateAddress(_address);
@@ -131,7 +131,7 @@ contract Master {
             }
         }
 
-		if (_address == adminOwner) {
+		if (_address == owner) {
             revert();
         }
 	}
@@ -230,9 +230,5 @@ contract Master {
 
         return compare(_a, _b) == 0;
     }
-
-    // edit new student (admin / student)
-    // edit new issuer (admin / issuer)
-    // revoke new certificate (issuer)
     
 }
