@@ -22,11 +22,12 @@ requireJS.require(['settings', 'web3', 'jquery', 'bootstrap'], function (setting
 			}
 
 			var certificates = contractInstance.getStudentCertificates();
+			certificates = certificates.filter(value => value > 0);
 			console.log(certificates.length + " certificate record(s) loaded");
 
 			if (certificates.length > 0) {
 				certificates.forEach(function (index) {
-					var certificateDetails = contractInstance.getCertificateDetails(index);
+					var certificateDetails = contractInstance.getCertificateDetails(index - 1);
 					var expiry = certificateDetails[4] ? certificateDetails[4] : "N/A";
 					var issuer = '<a class="cert-button" data-toggle="modal" data-target="#certModal" style="cursor: pointer">' + certificateDetails[0] + '</a>';
 					$('table tbody').append('<tr><td>' + issuer + '</td><td>' + certificateDetails[2] + '</td><td>' + certificateDetails[3] + '</td><td>' + expiry + '</td></tr>');

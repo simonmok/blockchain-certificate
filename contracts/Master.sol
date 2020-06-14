@@ -181,7 +181,7 @@ contract Master {
 	    uint index = 0;
 	    for (uint count = 0; count < certificates.length; count++) {
 	        if (certificates[count].student == msg.sender) {
-			    studentCertificates[index++] = count;
+			    studentCertificates[index++] = count + 1;
 	        }
 		}
 		return studentCertificates;
@@ -194,7 +194,7 @@ contract Master {
 	    uint index = 0;
 	    for (uint count = 0; count < certificates.length; count++) {
 	        if (certificates[count].issuer == msg.sender) {
-			    issuedCertificates[index++] = count;
+			    issuedCertificates[index++] = count + 1;
 	        }
 		}
 		return issuedCertificates;

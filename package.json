@@ -1,10 +1,10 @@
 {
   "name": "certificate-blockchain",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Dapps for issuing and verifying certificates",
   "main": "index.js",
   "scripts": {
-    "dev": "lite-server"
+    "dev": "node deploy-contract.js && lite-server"
   },
   "author": "",
   "license": "ISC",
